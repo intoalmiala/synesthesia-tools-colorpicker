@@ -42,7 +42,7 @@ lastevent = None
 # Play random recording
 def play(event):
     global lastindex, colorlist
-    if not lastindex is None:
+    if lastindex is not None and len(files):
         colors[files[lastindex]] = colorlist
         colorlist = []
         files.pop(lastindex)
@@ -50,9 +50,12 @@ def play(event):
         index = randrange(len(files))
         while files[index] in colors:
             files.pop(index)
-            index = randrange(len(files))
-        playsound(f"{DIRECTORY}/{files[index]}")
-        lastindex = index
+            if len(files):
+                index = randrange(len(files))
+            else: break
+        else:
+            playsound(f"{DIRECTORY}/{files[index]}")
+            lastindex = index
     else:
         print("All files played.")
     lastevent = "play"
