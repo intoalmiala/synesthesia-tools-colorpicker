@@ -76,6 +76,7 @@ def onexit():
 
 # Configure window
 root = tk.Tk()
+root.title("colorpicker")
 img = Image.open(COLOR_IMAGE).resize(SIZE)
 img_tk = ImageTk.PhotoImage(img)
 label = tk.Label(root, image = img_tk)
