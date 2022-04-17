@@ -1,5 +1,5 @@
-# tukoke2021-colorpicker
-Color picker program for TuKoKe 2021
+# synesthesia-tools-colorpicker
+Color picker program for synesthesia research
 
 ## Dependencies
 * `python3`
